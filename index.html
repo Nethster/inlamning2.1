@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script src="./main.js" defer></script>
+	</head>
+	<body>
+		<header>
+			<h1>Budget App</h1>
+		</header>
+
+		<h1>Balance</h1>
+        <!--DIV FÖR CURRENT BALANCE-->
+		<div>
+			<div class="money"></div>
+		</div>
+		<!--DIV CONTAINER FÖR INPUTS-->
+		<div class="container-inputs">
+			<form>
+				<select name="" id="">
+					<option value="choose" class="choose">Choose</option>
+					<option value="+" class="plus">+</option>
+					<option value="-" class="minus">-</option>
+				</select>
+				<input type="text" onfocus="this.value=''" id="item" placeholder="Item" />
+				<input type="number" onfocus="this.value=''" id="amount" placeholder="Amount" />
+				<button class="btn">Calc</button>
+			</form>
+		</div>
+
+		<!--DIV FOR INCOME AND Expense-->
+		<div>
+			<div class="income">
+				<h1 class="incHeader">Latest Income</h1>
+				<div class="income-current"></div>
+			</div>
+			<div class="expense">
+				<h1 class="exp-header">Latest Expense</h1>
+				<div class="expense-current"></div>
+			</div>
+		</div>
+
+		<!--DIV FOR INCOME AND EXPENSE HISTORY-->
+		<div class="incomeTab">
+			<h2 class="incHistory">Income History</h2>
+			<div class="income-list"></div>
+		</div>
+		<div class="expenseTab">
+			<h2 class="expHistory">Expense History</h2>
+			<div class="expense-list"></div>
+		</div>
+
+		<!--DIV FOR ALL HISTORY-->
+		<div class="historyTab">
+			<h2 class="history-header">All History</h2>
+			<div class="history-list"></div>
+		</div>
+	</body>
+</html>
