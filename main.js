@@ -37,24 +37,25 @@ function calculate(e) {
 	if (option.value == "+") {
 		const incValue = document.querySelector(".income-current");
 		const incHistory = document.querySelector(".income-list");
-		currentInc.push(amount), incomeList.push(amount), historyList.push(amount);
-		incValue.innerHTML = `<li id='incCurrent-1'>	${item} ${amount}</li>`;
-		incHistory.innerHTML += `<li id='incHistory-1'>	${item} ${amount}</li>`;
-		history.innerHTML += `<li id='history-2'>	${item} ${amount}</li>`;
+		currentInc.unshift(amount), incomeList.unshift(amount), historyList.unshift(amount);
+		incValue.innerHTML = `<li id='incCurrent-1'> +${amount } ${item} </li>`;
+		incHistory.innerHTML += `<li id='incHistory-1'> +${amount} ${item} </li>`;
+		history.innerHTML += `<li id='history-2'> +${amount} ${item} </li>`;
 	}
 
 	if (option.value == "-") {
 		const expValue = document.querySelector(".expense-current");
 		const expHistory = document.querySelector(".expense-list");
-		currentExp.push, expenseList.push(amount), historyList.push(amount);
-		expValue.innerHTML = `<li id='expCurrent-1'>	-	${item} ${amount}</li>`;
-		expHistory.innerHTML += `<li id='incHistory-1'> -	${item} ${amount}</li>`;
-		history.innerHTML += `<li id='history-1'> -	${item}	 ${amount}</li>`;
+		currentExp.unshift, expenseList.unshift(amount), historyList.unshift(amount);
+		expValue.innerHTML = `<li id='expCurrent-1'> -${amount}	${item}</li>`;
+		expHistory.innerHTML += `<li id='incHistory-1'> -${amount} ${item} </li>`;
+		history.innerHTML += `<li id='history-1'>  -${amount} ${item}	 </li>`;
 	}
 	if (option.value == "choose") {
 		alert("Please add Income or Expense");
 	}
 
+	//
 	for (var i = 0; i < incomeList.length; i++) {
 		incBalance += Number(incomeList[i]);
 	}
@@ -69,6 +70,7 @@ function calculate(e) {
 	const tabs = document.querySelectorAll("[data-tab-target]");
 	const tabContent = document.querySelectorAll("[data-tab-content]");
 
+	//TABS
 	tabs.forEach((tab) => {
 		tab.addEventListener("click", () => {
 			const target = document.querySelector(tab.dataset.tabTarget);

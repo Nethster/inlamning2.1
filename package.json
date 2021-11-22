@@ -5,10 +5,9 @@
   "name": "v.3",
   "version": "1.0.0",
   "main": "main.js",
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "scss": "node-sass SCSS/main.scss CSS/style.css -w"
+    "scss": "node-sass SCSS/main.scss CSS/style.css"
   },
   "repository": {
     "type": "git",

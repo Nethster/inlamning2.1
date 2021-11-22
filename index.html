@@ -9,77 +9,79 @@
 		<link rel="stylesheet" href="./CSS/style.css" />
 	</head>
 	<body>
-		<header>
-			<h1>Budget App</h1>
-			<!-- div for tabs-->
-			<div class="tabsContainer">
-				<ul class="tabs">
-					<li data-tab-target=".incTab" class="tab">Income History</li>
+		<div class="appContainer">
+			<header>
+				<h1>Budget App</h1>
+				<!-- div for tabs-->
+				<div class="tabsContainer">
+					<ul class="tabs">
+						<li data-tab-target=".incTab" class="tab">Income History</li>
 
-					<li data-tab-target=".expTab" class="tab">Expense History</li>
-					
-					<li data-tab-target=".historyTab" class="tab">All History</li>
-				</ul>
+						<li data-tab-target=".expTab" class="tab">Expense History</li>
+
+						<li data-tab-target=".historyTab" class="tab">All History</li>
+					</ul>
+				</div>
+			</header>
+
+			<h1>Balance</h1>
+			<!--DIV FÖR CURRENT BALANCE-->
+			<div>
+				<div class="money"></div>
 			</div>
-		</header>
-
-		<h1>Balance</h1>
-		<!--DIV FÖR CURRENT BALANCE-->
-		<div>
-			<div class="money"></div>
-		</div>
-		<!--DIV CONTAINER FÖR INPUTS-->
-		<div class="container-inputs">
-			<form>
-				<select name="" id="">
-					<option value="choose" class="choose">Choose</option>
-					<option value="+" class="plus">+</option>
-					<option value="-" class="minus">-</option>
-				</select>
-				<input
-					type="text"
-					onfocus="this.value=''"
-					id="item"
-					placeholder="Ex Salary/Rent"
-				/>
-				<input
-					type="number"
-					onfocus="this.value=''"
-					id="amount"
-					placeholder="Amount"
-				/>
-				<button class="btn">Calc</button>
-			</form>
-		</div>
-
-		<!--DIV FOR INCOME AND Expense-->
-		<div>
-			<div class="income">
-				<h1 class="incHeader">Latest Income</h1>
-				<ul class="income-current"></ul>
-			</div>
-			<div class="expense">
-				<h1 class="exp-header">Latest Expense</h1>
-				<ul class="expense-current"></ul>
-			</div>
-		</div>
-
-		<!--DIV FOR INCOME AND EXPENSE HISTORY-->
-		<div class="historyCollect">
-			<div class="incTab" data-tab-content>
-				<h1>Income</h1>
-				<ul class="income-list"></ul>
+			<!--DIV CONTAINER FÖR INPUTS-->
+			<div class="container-inputs">
+				<form>
+					<select name="" id="">
+						<option value="choose" class="choose">Choose</option>
+						<option value="+" class="plus">+</option>
+						<option value="-" class="minus">-</option>
+					</select>
+					<input
+						type="text"
+						onfocus="this.value=''"
+						id="item"
+						placeholder="Ex Salary/Rent"
+					/>
+					<input
+						type="number"
+						onfocus="this.value=''"
+						id="amount"
+						placeholder="Amount"
+					/>
+					<button class="btn">Calc</button>
+				</form>
 			</div>
 
-			<div class="expTab" data-tab-content>
-				<h1>Expenses</h1>
-				<ul class="expense-list"></ul>
+			<!--DIV FOR INCOME AND Expense-->
+			<div>
+				<div class="income">
+					<h1 class="incHeader">Latest Income</h1>
+					<ul class="income-current"></ul>
+				</div>
+				<div class="expense">
+					<h1 class="exp-header">Latest Expense</h1>
+					<ul class="expense-current"></ul>
+				</div>
 			</div>
 
-			<!--DIV FOR ALL HISTORY-->
-			<div class="historyTab" data-tab-content>
-				<h1>History</h1>
-				<ul class="history-list"></ul>
+			<!--DIV FOR INCOME AND EXPENSE HISTORY-->
+			<div class="historyCollect">
+				<div class="incTab" data-tab-content>
+					<h1>Income</h1>
+					<ul class="income-list"></ul>
+				</div>
+
+				<div class="expTab" data-tab-content>
+					<h1>Expenses</h1>
+					<ul class="expense-list"></ul>
+				</div>
+
+				<!--DIV FOR ALL HISTORY-->
+				<div class="historyTab" data-tab-content>
+					<h1>History</h1>
+					<ul class="history-list"></ul>
+				</div>
 			</div>
 		</div>
 	</body>
