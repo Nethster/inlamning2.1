@@ -6,14 +6,25 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
 		<script src="./main.js" defer></script>
+		<link rel="stylesheet" href="./CSS/style.css" />
 	</head>
 	<body>
 		<header>
 			<h1>Budget App</h1>
+			<!-- div for tabs-->
+			<div class="tabsContainer">
+				<ul class="tabs">
+					<li data-tab-target=".incTab" class="tab">Income History</li>
+
+					<li data-tab-target=".expTab" class="tab">Expense History</li>
+					
+					<li data-tab-target=".historyTab" class="tab">All History</li>
+				</ul>
+			</div>
 		</header>
 
 		<h1>Balance</h1>
-        <!--DIV FÖR CURRENT BALANCE-->
+		<!--DIV FÖR CURRENT BALANCE-->
 		<div>
 			<div class="money"></div>
 		</div>
@@ -25,8 +36,18 @@
 					<option value="+" class="plus">+</option>
 					<option value="-" class="minus">-</option>
 				</select>
-				<input type="text" onfocus="this.value=''" id="item" placeholder="Item" />
-				<input type="number" onfocus="this.value=''" id="amount" placeholder="Amount" />
+				<input
+					type="text"
+					onfocus="this.value=''"
+					id="item"
+					placeholder="Ex Salary/Rent"
+				/>
+				<input
+					type="number"
+					onfocus="this.value=''"
+					id="amount"
+					placeholder="Amount"
+				/>
 				<button class="btn">Calc</button>
 			</form>
 		</div>
@@ -35,28 +56,31 @@
 		<div>
 			<div class="income">
 				<h1 class="incHeader">Latest Income</h1>
-				<div class="income-current"></div>
+				<ul class="income-current"></ul>
 			</div>
 			<div class="expense">
 				<h1 class="exp-header">Latest Expense</h1>
-				<div class="expense-current"></div>
+				<ul class="expense-current"></ul>
 			</div>
 		</div>
 
 		<!--DIV FOR INCOME AND EXPENSE HISTORY-->
-		<div class="incomeTab">
-			<h2 class="incHistory">Income History</h2>
-			<div class="income-list"></div>
-		</div>
-		<div class="expenseTab">
-			<h2 class="expHistory">Expense History</h2>
-			<div class="expense-list"></div>
-		</div>
+		<div class="historyCollect">
+			<div class="incTab" data-tab-content>
+				<h1>Income</h1>
+				<ul class="income-list"></ul>
+			</div>
 
-		<!--DIV FOR ALL HISTORY-->
-		<div class="historyTab">
-			<h2 class="history-header">All History</h2>
-			<div class="history-list"></div>
+			<div class="expTab" data-tab-content>
+				<h1>Expenses</h1>
+				<ul class="expense-list"></ul>
+			</div>
+
+			<!--DIV FOR ALL HISTORY-->
+			<div class="historyTab" data-tab-content>
+				<h1>History</h1>
+				<ul class="history-list"></ul>
+			</div>
 		</div>
 	</body>
 </html>

@@ -1,6 +1,18 @@
+//CORE FUNCTION
 document.querySelector("button").addEventListener("click", calculate);
 const option = document.querySelector("select");
-const clear = document.querySelector(".btn");
+
+//SELECTION ELEMENTS FOR LISTS
+const history = document.querySelector(".history-list");
+const expValue = document.querySelector(".expense-current");
+const expHistory = document.querySelector(".expense-list");
+const incValue = document.querySelector(".income-current");
+const incHistory = document.querySelector(".income-list");
+
+//TOGGLE TABS
+const tabs = document.querySelector(".tabs");
+const incTab = document.querySelector(".incTab");
+const expTab = document.querySelector(".expTab");
 
 //Lists for ins and outs
 let currentInc = [];
@@ -16,30 +28,28 @@ const balance = document.querySelector(".money");
 
 function calculate(e) {
 	e.preventDefault();
-	//console.log(option.value);
+	incBalance = 0;
+	expBalance = 0;
+	const item = document.querySelector("#item").value;
+	const amount = document.querySelector("#amount").value;
+	const history = document.querySelector(".history-list");
 
 	if (option.value == "+") {
-		const item = document.querySelector("#item").value;
-		const amount = document.querySelector("#amount").value;
 		const incValue = document.querySelector(".income-current");
 		const incHistory = document.querySelector(".income-list");
-		const history = document.querySelector(".history-list");
 		currentInc.push(amount), incomeList.push(amount), historyList.push(amount);
-		incValue.innerHTML = `<li id='0'>	${item} ${amount}</li>`;
-		incHistory.innerHTML += `<li id='0'>	${item} ${amount}</li>`;
-		history.innerHTML += `<li id='0'>	${item} ${amount}</li>`;
+		incValue.innerHTML = `<li id='incCurrent-1'>	${item} ${amount}</li>`;
+		incHistory.innerHTML += `<li id='incHistory-1'>	${item} ${amount}</li>`;
+		history.innerHTML += `<li id='history-2'>	${item} ${amount}</li>`;
 	}
 
 	if (option.value == "-") {
-		const item = document.querySelector("#item").value;
-		const amount = document.querySelector("#amount").value;
 		const expValue = document.querySelector(".expense-current");
 		const expHistory = document.querySelector(".expense-list");
-		const history = document.querySelector(".history-list");
 		currentExp.push, expenseList.push(amount), historyList.push(amount);
-		expValue.innerHTML = `<li id='0'>	${item} ${amount}</li>`;
-		expHistory.innerHTML += `<li id='0'>	${item} ${amount}</li>`;
-		history.innerHTML += `<li id='0'>	${item} ${amount}</li>`;
+		expValue.innerHTML = `<li id='expCurrent-1'>	-	${item} ${amount}</li>`;
+		expHistory.innerHTML += `<li id='incHistory-1'> -	${item} ${amount}</li>`;
+		history.innerHTML += `<li id='history-1'> -	${item}	 ${amount}</li>`;
 	}
 	if (option.value == "choose") {
 		alert("Please add Income or Expense");
@@ -54,6 +64,16 @@ function calculate(e) {
 
 	console.log(incBalance, expBalance);
 	balance.textContent = incBalance - expBalance;
-}
 
-console.log(currentExp, currentInc, incomeList, expenseList, historyList);
+	//TAB ACTIVATOR
+	const tabs = document.querySelectorAll("[data-tab-target]");
+	const tabContent = document.querySelectorAll("[data-tab-content]");
+
+	tabs.forEach((tab) => {
+		tab.addEventListener("click", () => {
+			const target = document.querySelector(tab.dataset.tabTarget);
+			tabContent.forEach((tabContent) => tabContent.classList.remove("active"));
+			target.classList.add("active");
+		});
+	});
+}
